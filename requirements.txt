@@ -1,0 +1,17 @@
+streamlit>=1.35.0
+pymupdf>=1.24.0
+sentence-transformers>=2.7.0
+faiss-cpu>=1.8.0
+numpy>=1.24.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+pytest>=8.0.0
+
+# LLM backends (install only what you need)
+# For local HuggingFace inference:
+# transformers>=4.40.0
+# torch>=2.2.0
+# accelerate>=0.29.0
+
+# For OpenAI-compatible APIs (LM Studio, Together, Groq, etc.):
+# openai>=1.30.0

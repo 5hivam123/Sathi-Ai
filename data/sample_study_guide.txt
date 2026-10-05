@@ -1,0 +1,322 @@
+Introduction to Computer Networks and Cybersecurity
+A Study Guide for Undergraduate Students
+
+================================================================
+CHAPTER 1: INTRODUCTION TO COMPUTER NETWORKS
+================================================================
+
+1.1 What is a Computer Network?
+
+A computer network is a collection of interconnected devices that can communicate and share resources with each other. Networks enable devices such as computers, servers, printers, and smartphones to exchange data and collaborate efficiently.
+
+Networks are classified by their geographic scope:
+- Local Area Network (LAN): Covers a small geographic area such as a home, office, or building.
+- Wide Area Network (WAN): Spans large geographic areas, potentially worldwide. The Internet is the largest WAN.
+- Metropolitan Area Network (MAN): Covers a city or large campus.
+- Personal Area Network (PAN): Very short range, typically within a room (e.g., Bluetooth).
+
+1.2 The OSI Model
+
+The Open Systems Interconnection (OSI) model is a conceptual framework that describes how different network protocols interact. It divides network communication into seven layers:
+
+Layer 7 – Application Layer:
+The topmost layer. Provides network services directly to end-user applications. Protocols include HTTP, HTTPS, FTP, SMTP, DNS, and SSH.
+
+Layer 6 – Presentation Layer:
+Responsible for data translation, encryption, and compression. Converts data between application format and network format.
+
+Layer 5 – Session Layer:
+Manages sessions between applications. Handles session establishment, maintenance, and termination.
+
+Layer 4 – Transport Layer:
+Provides end-to-end communication services. Handles segmentation, flow control, and error recovery. Key protocols: TCP and UDP.
+
+Layer 3 – Network Layer:
+Responsible for logical addressing (IP addresses) and routing of packets across networks. Key protocol: IP (Internet Protocol).
+
+Layer 2 – Data Link Layer:
+Handles reliable transmission of data frames between adjacent network nodes. Manages MAC addresses and error detection.
+
+Layer 1 – Physical Layer:
+Deals with the physical connection between devices. Specifies hardware elements such as cables, switches, and signal types.
+
+Mnemonic to remember layers (top to bottom): "All People Seem To Need Data Processing"
+
+1.3 TCP/IP Model
+
+The TCP/IP model is the practical model used in real-world networks. It has four layers:
+
+1. Application Layer (corresponds to OSI Layers 5-7)
+2. Transport Layer (corresponds to OSI Layer 4)
+3. Internet Layer (corresponds to OSI Layer 3)
+4. Network Access Layer (corresponds to OSI Layers 1-2)
+
+1.4 IP Addressing
+
+IPv4 addresses are 32-bit numbers expressed as four decimal octets separated by dots.
+Example: 192.168.1.100
+
+IPv6 addresses are 128-bit numbers expressed in hexadecimal, separated by colons.
+Example: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+Subnetting divides a network into smaller sub-networks using subnet masks.
+
+1.5 Key Networking Protocols
+
+DNS (Domain Name System):
+Translates human-readable domain names into IP addresses.
+Example: "google.com" → 142.250.195.14
+
+HTTP/HTTPS:
+HyperText Transfer Protocol. Used for web communication.
+HTTPS adds SSL/TLS encryption for security.
+
+DHCP (Dynamic Host Configuration Protocol):
+Automatically assigns IP addresses to devices on a network.
+
+FTP (File Transfer Protocol):
+Used for transferring files between a client and server.
+
+SSH (Secure Shell):
+Provides secure remote login and command execution over an encrypted connection.
+
+================================================================
+CHAPTER 2: CYBERSECURITY FUNDAMENTALS
+================================================================
+
+2.1 What is Cybersecurity?
+
+Cybersecurity is the practice of protecting computer systems, networks, and data from digital attacks, unauthorized access, damage, or theft.
+
+The three core principles of cybersecurity are collectively known as the CIA Triad:
+
+Confidentiality: Ensuring that information is accessible only to those authorized to have access.
+
+Integrity: Ensuring that information is accurate and has not been tampered with or altered without authorization.
+
+Availability: Ensuring that authorized users have access to information and resources when needed.
+
+2.2 Types of Cyber Threats
+
+Malware:
+Malicious software designed to harm or exploit devices and networks.
+Types of malware:
+- Virus: Self-replicating code that attaches to legitimate programs.
+- Trojan Horse: Malware disguised as legitimate software.
+- Ransomware: Encrypts victim's data and demands payment for decryption.
+- Spyware: Secretly collects user information.
+- Worm: Self-replicating malware that spreads across networks without user action.
+- Rootkit: Hides malicious activity by modifying the operating system.
+
+Phishing:
+A social engineering attack where an attacker sends fraudulent emails or messages to trick users into revealing sensitive information such as passwords or credit card numbers.
+
+SQL Injection:
+An attack where malicious SQL code is inserted into input fields to manipulate a database.
+Example: Entering ' OR '1'='1 in a login form to bypass authentication.
+Prevention: Use parameterized queries and input validation.
+
+Cross-Site Scripting (XSS):
+Injecting malicious scripts into web pages that are then executed by other users' browsers.
+Types:
+- Stored XSS: Malicious script is stored on the server.
+- Reflected XSS: Malicious script is reflected off the server.
+Prevention: Input validation, output encoding, Content Security Policy (CSP).
+
+Denial of Service (DoS) and Distributed Denial of Service (DDoS):
+Flooding a server or network with excessive requests to make it unavailable to legitimate users.
+DDoS uses multiple compromised machines (botnet) to amplify the attack.
+
+Man-in-the-Middle (MitM) Attack:
+An attacker secretly intercepts communication between two parties.
+Prevention: Use encrypted protocols (HTTPS, TLS), VPNs.
+
+2.3 Access Control Models
+
+Discretionary Access Control (DAC):
+The owner of a resource decides who can access it and what permissions they have.
+Used in most personal operating systems (Windows, Linux file permissions).
+
+Mandatory Access Control (MAC):
+Access decisions are made by a central authority based on security labels, not resource owners.
+Commonly used in government and military systems.
+
+Role-Based Access Control (RBAC):
+Access is granted based on a user's role within an organization.
+Example: Managers can access salary reports; employees cannot.
+Advantages:
+- Easier to manage at scale.
+- Reduces risk of privilege escalation.
+- Simplifies compliance reporting.
+
+Attribute-Based Access Control (ABAC):
+Access is granted based on attributes of the user, resource, and environment.
+More flexible and fine-grained than RBAC.
+
+2.4 The Bell-LaPadula Model
+
+The Bell-LaPadula (BLP) model is a formal state machine model for enforcing mandatory access control in government and military applications. It focuses on data confidentiality.
+
+Core Properties:
+
+Simple Security Property (No Read Up):
+A subject at a lower security level cannot read an object at a higher security level.
+A secret-cleared user cannot read top-secret documents.
+
+Star Property / *-Property (No Write Down):
+A subject at a higher security level cannot write information to a lower security level.
+A top-secret cleared user cannot write to a secret-level file.
+
+Strong Star Property:
+A subject can only read and write at its exact security level.
+
+The Bell-LaPadula model prevents information leakage from higher to lower security classifications.
+
+2.5 Cryptography
+
+Cryptography is the practice of secure communication in the presence of adversaries.
+
+Symmetric Encryption:
+Uses the same key for both encryption and decryption.
+Examples: AES (Advanced Encryption Standard), DES, 3DES.
+Advantage: Fast.
+Disadvantage: Key distribution problem.
+
+Asymmetric Encryption (Public Key Cryptography):
+Uses a public key for encryption and a private key for decryption.
+Examples: RSA, ECC (Elliptic Curve Cryptography).
+Advantage: Solves key distribution problem.
+Disadvantage: Slower than symmetric encryption.
+
+Hashing:
+A one-way function that converts data into a fixed-size hash value.
+Examples: MD5, SHA-1, SHA-256, SHA-3.
+Uses: Password storage, data integrity verification, digital signatures.
+
+Digital Signatures:
+Use asymmetric cryptography to verify the authenticity and integrity of a message.
+The sender signs with their private key; the receiver verifies with the sender's public key.
+
+TLS/SSL (Transport Layer Security / Secure Sockets Layer):
+Protocols that provide encrypted communication over a network.
+Used by HTTPS to secure web traffic.
+TLS performs a handshake to establish a secure channel.
+
+2.6 Firewalls and Intrusion Detection
+
+Firewall:
+A network security device that monitors and controls incoming and outgoing network traffic based on predefined security rules.
+
+Types of firewalls:
+- Packet filtering firewall: Inspects packets at the network layer.
+- Stateful inspection firewall: Tracks the state of active connections.
+- Application layer firewall (proxy): Inspects application-level traffic.
+- Next-generation firewall (NGFW): Combines traditional firewall with advanced features.
+
+Intrusion Detection System (IDS):
+Monitors network traffic for suspicious activity and alerts administrators.
+Types:
+- Signature-based IDS: Detects known attack patterns.
+- Anomaly-based IDS: Detects deviations from normal behavior.
+
+Intrusion Prevention System (IPS):
+Similar to IDS but also takes action to block or prevent detected intrusions.
+
+2.7 Vulnerability Assessment and Penetration Testing
+
+Vulnerability Assessment:
+The process of identifying, quantifying, and prioritizing vulnerabilities in a system.
+Tools: Nessus, OpenVAS, Qualys.
+
+Penetration Testing (Pen Testing):
+A simulated cyberattack against a system to evaluate its security.
+Types:
+- Black-box testing: Tester has no prior knowledge of the system.
+- White-box testing: Tester has full knowledge of the system.
+- Gray-box testing: Tester has partial knowledge.
+
+================================================================
+CHAPTER 3: DATABASE SECURITY
+================================================================
+
+3.1 Introduction to Database Security
+
+Database security encompasses the range of tools, controls, and measures designed to preserve and protect the confidentiality, integrity, and availability of database management systems (DBMS).
+
+3.2 SQL Injection (Detailed)
+
+SQL Injection is one of the most critical web application security vulnerabilities.
+
+How it works:
+An attacker inserts or injects malicious SQL code into a query through user-supplied input.
+
+Example vulnerable query:
+SELECT * FROM users WHERE username = '[input]' AND password = '[password]'
+
+If an attacker enters: admin' --
+The query becomes: SELECT * FROM users WHERE username = 'admin' -- ' AND password = '...'
+The -- comments out the password check, granting unauthorized access.
+
+Types of SQL Injection:
+1. Classic/In-band SQLi: Uses same channel for attack and data retrieval.
+2. Blind SQLi: No direct output; attacker infers data from application behavior.
+3. Out-of-band SQLi: Uses different channel (e.g., DNS, HTTP requests) for data extraction.
+
+Prevention:
+- Parameterized queries / prepared statements.
+- Stored procedures.
+- Input validation and sanitization.
+- Least privilege principle for database accounts.
+- Web Application Firewalls (WAF).
+
+3.3 Database Access Control
+
+Principle of Least Privilege:
+Users and applications should have only the minimum permissions necessary to perform their functions.
+
+Database Auditing:
+Recording database activities for security monitoring and compliance.
+Logs who accessed what data, when, and what changes were made.
+
+Data Encryption at Rest:
+Encrypting data stored in the database to protect against physical theft or unauthorized access.
+Transparent Data Encryption (TDE) is commonly used.
+
+Data Encryption in Transit:
+Encrypting data transmitted between the database and applications using TLS.
+
+================================================================
+PRACTICE QUESTIONS
+================================================================
+
+Short-Answer Questions:
+1. What are the seven layers of the OSI model? Give one protocol for each layer.
+2. Explain the difference between symmetric and asymmetric encryption.
+3. What is the CIA Triad? Explain each component.
+4. Describe the Bell-LaPadula model and its two main properties.
+5. What is SQL Injection? How can it be prevented?
+6. Differentiate between IDS and IPS.
+7. What is Role-Based Access Control? Give an example.
+
+Long-Answer Questions:
+1. Compare and contrast the OSI model and the TCP/IP model. Explain the purpose of each layer.
+2. Explain the different types of cyberattacks and suggest countermeasures for each.
+3. Describe how TLS/SSL works to secure web communications.
+4. Discuss the importance of the principle of least privilege in cybersecurity with examples.
+
+================================================================
+KEY TERMS GLOSSARY
+================================================================
+
+Confidentiality: Protection of data from unauthorized disclosure.
+Integrity: Assurance that data has not been tampered with.
+Availability: Ensuring authorized access to data and services when needed.
+Authentication: Verifying the identity of a user or system.
+Authorization: Determining what actions an authenticated user is permitted to perform.
+Non-repudiation: Ensuring that a party cannot deny having sent a message or performed an action.
+Vulnerability: A weakness in a system that can be exploited.
+Exploit: A program or technique that takes advantage of a vulnerability.
+Zero-day: A vulnerability unknown to the software vendor, with no available patch.
+Botnet: A network of compromised computers controlled by an attacker.
+Honeypot: A security resource designed to attract and detect attackers.
+Social Engineering: Manipulating people into divulging confidential information.
